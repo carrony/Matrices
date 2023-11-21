@@ -19,4 +19,14 @@
 
 	void matrizAleatoriaEntre1y10(int filas, int cols, int matriz[][MAX]);
 
+	int esIgualAValor(int filas, int cols, int matriz[][MAX], int valor);
+
+	int esTriangularSup(int tam, int matriz[][MAX]);
+
+
+	int esTriangularInf(int tam, int matriz[][MAX]);
+
+	int esDiagonal(int tam, int matriz[][MAX]);
+
+
 #endif /* MATRICES_H_ */

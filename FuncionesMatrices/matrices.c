@@ -65,3 +65,74 @@ void pedirMatriz(int filas, int cols, int matriz[][MAX]) {
 			}
 		}
 	}
+
+	int esIgualAValor(int filas, int cols, int matriz[][MAX], int valor){
+		int i,j;
+		for (i=0;i<filas;i++) {
+			for (j=0;j<cols;j++) {
+				if (matriz[i][j]!=valor) {
+					return 0;
+				}
+			}
+		}
+		return 1;
+	}
+
+	int esTriangularSup(int tam, int matriz[][MAX]) {
+		int i,j;
+		for (i=1;i<tam;i++) {
+			for (j=0; j<i;j++) {
+				if (matriz[i][j]!=0) {
+					return 0;
+				}
+			}
+		}
+		return 1;
+	}
+
+	int esTriangularInf(int tam, int matriz[][MAX]) {
+		int i,j;
+		for (i=0;i<tam-1;i++) {
+			for (j=i+1; j<tam;j++) {
+				if (matriz[i][j]!=0) {
+					return 0;
+				}
+			}
+		}
+		return 1;
+	}
+
+
+
+//	int esTriangularInfv2(int tam, int matriz[][MAX]) {
+//			int i,j;
+//			for (i=1;i<tam;i++) {
+//				for (j=0; j<i;j++) {
+//					if (matriz[j][i]!=0) {
+//						return 0;
+//					}
+//				}
+//			}
+//			return 1;
+//		}
+
+//	int esTriangularSupv2(int tam, int matriz[][MAX]) {
+//		int i,j;
+//		for (i=0;i<tam;i++) {
+//			for (j=0; j<tam;j++) {
+//
+//				if (matriz[i][j]!=0 && j<i) {
+//					return 0;
+//				}
+//			}
+//		}
+//		return 1;
+//	}
+
+
+	int esDiagonal(int tam, int matriz[][MAX]){
+		return esTriangularInf(tam,matriz)
+				&&  esTriangularSup(tam,matriz)
+				&& !esIgualAValor(tam,tam,matriz,0);
+	}
+
