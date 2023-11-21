@@ -15,4 +15,8 @@
 
 	int devuelveMenor(int filas, int cols, int matriz[][MAX]);
 
+	void inicializar(int filas, int cols, int matriz[][MAX], int num);
+
+	void matrizAleatoriaEntre1y10(int filas, int cols, int matriz[][MAX]);
+
 #endif /* MATRICES_H_ */

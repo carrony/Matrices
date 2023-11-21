@@ -6,6 +6,8 @@
  */
 #include <stdio.h>
 #include "matrices.h"
+#include <time.h>
+#include <stdlib.h>
 
 void pedirMatriz(int filas, int cols, int matriz[][MAX]) {
 	int i,j;
@@ -41,3 +43,25 @@ void pedirMatriz(int filas, int cols, int matriz[][MAX]) {
 		return menor;
 	}
 
+
+	void inicializar(int filas, int cols, int matriz[][MAX], int num){
+		int i,j;
+		for (i=0;i<filas;i++) {
+			for (j=0;j<cols;j++) {
+				matriz[i][j]=num;
+			}
+		}
+	}
+
+
+	void matrizAleatoriaEntre1y10(int filas, int cols, int matriz[][MAX]){
+		int i,j;
+
+		srand(time(NULL));
+
+		for (i=0;i<filas;i++) {
+			for (j=0;j<cols;j++) {
+				matriz[i][j]=rand()%10+1;
+			}
+		}
+	}
